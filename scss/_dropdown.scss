@@ -32,6 +32,10 @@
   border: $dropdown-border-width solid $dropdown-border-color;
   @include border-radius($dropdown-border-radius);
   @include box-shadow($dropdown-box-shadow);
+
+  &[data-bs-popper] {
+    margin-top: $dropdown-spacer;
+  }
 }
 
 // scss-docs-start responsive-breakpoints
@@ -70,7 +74,7 @@
     top: auto;
     bottom: 100%;
 
-    &.show:not([data-popper-placement]) {
+    &[data-bs-popper] {
       margin-top: 0;
       margin-bottom: $dropdown-spacer;
     }
@@ -87,7 +91,7 @@
     right: auto;
     left: 100%;
 
-    &.show:not([data-popper-placement]) {
+    &[data-bs-popper] {
       margin-top: 0;
       margin-left: $dropdown-spacer;
     }
@@ -107,7 +111,7 @@
     right: 100%;
     left: auto;
 
-    &.show:not([data-popper-placement]) {
+    &[data-bs-popper] {
       margin-top: 0;
       margin-right: $dropdown-spacer;
     }
@@ -184,10 +188,6 @@
 
 .dropdown-menu.show {
   display: block;
-
-  &:not([data-popper-placement]) {
-    margin-top: $dropdown-spacer;
-  }
 }
 
 // Dropdown section headers
